@@ -1,0 +1,81 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "westworld personality test",
+            "intents": [
+                {
+                    "name": "NextQuestionIntent",
+                    "slots": [],
+                    "samples": []
+                },
+                {
+                    "name": "UndecisiveIntent",
+                    "slots": [],
+                    "samples": [
+                        "I don't know",
+                        "No idea",
+                        "um",
+                        "well",
+                        "I'm not sure",
+                        "I have no idea",
+                        "ask me something else",
+                        "I don't want to answer",
+                        "none of your business"
+                    ]
+                },
+                {
+                    "name": "ResultIntent",
+                    "slots": [],
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.RepeatIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AnswerIntent",
+                    "slots": [
+                        {
+                            "name": "number",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "{number} is my choice",
+                        "I pick number {number}",
+                        "number {number}",
+                        "I pick {number}",
+                        "option {number}",
+                        "answer {number}",
+                        "{number}"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
