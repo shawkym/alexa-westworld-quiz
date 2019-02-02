@@ -8,7 +8,7 @@ const Alexa = require('alexa-sdk');
 const test_data = require('data');
 // Set max questions to ask
 // Zero means all should be asked
-const max_questions = 0;
+const max_questions = 5;
 const points = test_data.points;
 const personalityList = test_data.CHARACTERS;
 const APP_ID = undefined;
@@ -43,7 +43,7 @@ const _randomOfArray = (array) => array[_randomIndexOfArray(array)];
 
 // enabled now for testing on aws
 // TODO disable
-init_i18n();
+//init_i18n();
 
 /***********
 Execution Code
@@ -76,7 +76,7 @@ const _nextQuestionOrResult = (handler, prependMessage = '') => {
     handler.handler.state = states.RESULTMODE;
     handler.emitWithState('ResultIntent', prependMessage);
   }
-  else if (handler.attributes['questionProgress'] > max_questions && max_questions != 0) {
+  else if (handler.attributes['questionProgress'] > max_questions-2 && max_questions > 0) {
     handler.handler.state = states.RESULTMODE;
     handler.emitWithState('ResultIntent', prependMessage);
   }
@@ -131,7 +131,7 @@ const newSessionHandlers = {
   },
   // When user says not ready
   'AMAZON.NoIntent': function() {
-    this.emitWithState('AMAZON.HelpIntent');
+    this.emitWithState('AMAZON.CancelIntent');
   },
   // When user asks for help
   'AMAZON.HelpIntent': function() {
@@ -143,7 +143,7 @@ const newSessionHandlers = {
   },
   // When skill is going to close.
   'AMAZON.StopIntent': function() {
-    this.emit(':tellWithCard', r `STOP_MESSAGE`, r `SKILL_NAME`, r `STOP_MESSAGE`);
+    this.emit(':tellWithCard', r `STOP_MESSAGE_AUDIO`, r `SKILL_NAME`, r `STOP_MESSAGE`);
   },
   // When user wants repeat
   'AMAZON.RepeatIntent': function() {
@@ -219,8 +219,9 @@ const quizModeHandlers = Alexa.CreateStateHandler(states.QUIZMODE, {
   // User didn't hear and wants Alexa to repeat
   'AMAZON.RepeatIntent': function() {
     var currentQuestion = r `questions` [this.attributes['questionIndex']].text;
+    var possibleAnswers = JSON.stringify(r `questions` [this.attributes['questionIndex']].answers);
 
-    this.emit(':askWithCard', currentQuestion, r `HELP_MESSAGE_AFTER_START`, r `SKILL_NAME`, currentQuestion);
+    this.emit(':askWithCard', currentQuestion + possibleAnswers, r `HELP_MESSAGE_AFTER_START`, r `SKILL_NAME`, currentQuestion + possibleAnswers);
     //                        ^speechOutput    ^repromptSpeech           ^cardTitle ^cardContent     ^imageObj
   },
   // User asks for help
@@ -229,11 +230,11 @@ const quizModeHandlers = Alexa.CreateStateHandler(states.QUIZMODE, {
   },
   // User wants to quit
   'AMAZON.CancelIntent': function() {
-    this.emit(':tellWithCard', r `CANCEL_MESSAGE`, r `SKILL_NAME`, r `CANCEL_MESSAGE`);
+    this.emit(':tellWithCard', r `CANCEL_MESSAGE` + r`STOP_MESSAGE_AUDIO`, r `SKILL_NAME`, r `CANCEL_MESSAGE`);
   },
   // Skill will stop
   'AMAZON.StopIntent': function() {
-    this.emit(':tellWithCard', r `STOP_MESSAGE`, r `SKILL_NAME`, r `STOP_MESSAGE`);
+    this.emit(':tellWithCard', r `STOP_MESSAGE_AUDIO`, r `SKILL_NAME`, r `STOP_MESSAGE`);
   },
   // Any other scenario
   'Unhandled': function() {
@@ -256,7 +257,7 @@ const resultModeHandlers = Alexa.CreateStateHandler(states.RESULTMODE, {
     // Cannot use r shortcut for some reason 
     const audio_ = i18n.t(personalityList[result].audio_message);
     const resultMessage = `${prependMessage} ${r`RESULT_MESSAGE`} ${name_} . ${audio_} . ${r`PLAY_AGAIN_REQUEST`}`;
-    this.emit(':askWithCard', resultMessage, r `PLAY_AGAIN_REQUEST`, personalityList[result].display_name, r `${personalityList[result].description}`, personalityList[result].img);
+    this.emit(':askWithCard', resultMessage , r`PLAY_AGAIN_REQUEST`, name_,i18n.t(personalityList[result].descriptions), personalityList[result].img);
   },
   // user wants to play again
   'AMAZON.YesIntent': function() {
@@ -266,7 +267,7 @@ const resultModeHandlers = Alexa.CreateStateHandler(states.RESULTMODE, {
   },
   // user dosen't want to play again
   'AMAZON.NoIntent': function() {
-    this.emitWithState('AMAZON.StopIntent');
+       this.emit(':tell', r `STOP_MESSAGE_AUDIO`);
   },
   // user wants help
   'AMAZON.HelpIntent': function() {

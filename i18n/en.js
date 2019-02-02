@@ -4,7 +4,8 @@ module.exports = {
         "HELP_MESSAGE_BEFORE_START": 'Answer my questions, and I will tell you which westworld character you match the most. Are you ready to play?',
         "HELP_MESSAGE_AFTER_START": "Just respond with the option number, you can also ask me to stop or repeat anytime.",
         "HELP_REPROMPT": "Your personality will be revealed after you answer all my questions.",
-        "STOP_MESSAGE": 'Thanks for your time. <audio src="https://raw.githubusercontent.com/shawkym/alexa-westworld-quiz/master/audio/start.mp3"/>',
+        "STOP_MESSAGE_AUDIO": 'Thanks for your time.  <audio src="https://raw.githubusercontent.com/shawkym/alexa-westworld-quiz/master/audio/end.mp3"/>',
+        "STOP_MESSAGE": 'Thanks for your time.',
         "CANCEL_MESSAGE": "Get yourself back online.",
         "MISUNDERSTOOD_INSTRUCTIONS_ANSWER": "Can you repeat what you said?.",
         "WELCOME_MESSAGE": `'<audio src="https://raw.githubusercontent.com/shawkym/alexa-westworld-quiz/master/audio/start.mp3"/>    <voice name="Matthew">

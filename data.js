@@ -7,7 +7,7 @@ const CHARACTERS = {
     name: "robert ford",
     display_name: "Robert Ford",
     audio_message: `FORD_MESSAGE`,
-    description: `FORD_MESSAGE`,
+    descriptions: `FORD_MESSAGE`,
     img: {
       smallImageUrl: "https://amp.thisisinsider.com/images/5832e0ea70296624008b47ed-750-563.png",
       largeImageUrl: "https://amp.thisisinsider.com/images/5832e0ea70296624008b47ed-750-563.png"
@@ -17,7 +17,7 @@ const CHARACTERS = {
     name: "Maeve Millay",
     display_name: "Maeve Millay",
     audio_message: `MAEVE_MESSAGE`,
-    description: `MAEVE_MESSAGE`,
+    descriptions: `MAEVE_MESSAGE`,
     img: {
       smallImageUrl: "https://i.pinimg.com/originals/71/be/22/71be22f7adfc28e4a2d9133a0d92c7df.jpg",
       largeImageUrl: "https://i.pinimg.com/originals/71/be/22/71be22f7adfc28e4a2d9133a0d92c7df.jpg"
@@ -27,7 +27,7 @@ const CHARACTERS = {
     name: "Dolores Abernathy",
     display_name: "Dolores Abernathy",
     audio_message: `DOLORES_MESSAGE`,
-    description: `DOLORES_MESSAGE`,
+    descriptions: `DOLORES_MESSAGE`,
     img: {
       smallImageUrl: "https://uproxx.files.wordpress.com/2016/10/westworld-doloroes-flies.jpg?quality=95",
       largeImageUrl: "https://uproxx.files.wordpress.com/2016/10/westworld-doloroes-flies.jpg?quality=95"
@@ -37,7 +37,7 @@ const CHARACTERS = {
     name: "Teddy Flood",
     display_name: "Teddy Flood",
     audio_message: `TEDDY_MESSAGE`,
-    description: `TEDDY_MESSAGE`,
+    descriptions: `TEDDY_MESSAGE`,
     img: {
       smallImageUrl: "https://i.pinimg.com/originals/55/ce/4c/55ce4c6ce3a7724accebb1017b2b3af2.jpg",
       largeImageUrl: "https://i.pinimg.com/originals/55/ce/4c/55ce4c6ce3a7724accebb1017b2b3af2.jpg"
@@ -47,7 +47,7 @@ const CHARACTERS = {
     name: "Bernard Lowe",
     display_name: "Bernard Lowe",
     audio_message: `BERNARD_MESSAGE`,
-    description: `BERNARD_MESSAGE`,
+    descriptions: `BERNARD_MESSAGE`,
     img: {
       smallImageUrl: "https://vignette.wikia.nocookie.net/westworld/images/b/b6/Bernard_Les_Ecorches.png/revision/latest?cb=20180604190617",
       largeImageUrl: "https://vignette.wikia.nocookie.net/westworld/images/b/b6/Bernard_Les_Ecorches.png/revision/latest?cb=20180604190617"
@@ -57,7 +57,7 @@ const CHARACTERS = {
     name: "Man in Black",
     display_name: "Man in Black",
     audio_message: "MIB_MESSAGE",
-    description: `MIB_MESSAGE`,
+    descriptions: `MIB_MESSAGE`,
     img: {
       smallImageUrl: "https://pixel.nymag.com/imgs/daily/vulture/2016/12/04/mib.w700.h700.jpg",
       largeImageUrl: "https://pixel.nymag.com/imgs/daily/vulture/2016/12/04/mib.w700.h700.jpg"
