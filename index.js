@@ -76,7 +76,7 @@ const _nextQuestionOrResult = (handler, prependMessage = '') => {
     handler.handler.state = states.RESULTMODE;
     handler.emitWithState('ResultIntent', prependMessage);
   }
-  else if (handler.attributes['questionProgress'] > max_questions-2 && max_questions > 0) {
+  else if (handler.attributes['questionProgress'] > max_questions - 2 && max_questions > 0) {
     handler.handler.state = states.RESULTMODE;
     handler.emitWithState('ResultIntent', prependMessage);
   }
@@ -84,6 +84,19 @@ const _nextQuestionOrResult = (handler, prependMessage = '') => {
     handler.emitWithState('NextQuestionIntent', prependMessage);
   }
 };
+
+//Check answers by word recognition, doing our best.
+// TODO: check for yes no, questions
+function check_answer(handler, question_number, answer) {
+  const answer_points = points[handler.attributes['questionIndex']];
+  if (answer && answer_points) {
+    if (answer == 0) _applyPoints(handler, answer_points.points_1);
+    if (answer == 1) _applyPoints(handler, answer_points.points_2);
+    if (answer == 2) _applyPoints(handler, answer_points.points_3);
+    if (answer == 3) _applyPoints(handler, answer_points.points_4);
+  }
+  _nextQuestionOrResult(handler);
+}
 
 // Calculate and update the points of results following this answer
 function _applyPoints(handler, answer_points) {
@@ -127,7 +140,7 @@ const newSessionHandlers = {
   // When user says ready
   'AMAZON.YesIntent': function() {
     this.handler.state = states.QUIZMODE;
-    _nextQuestionOrResult(this,r`PASS_ALEXA`);
+    _nextQuestionOrResult(this, r `PASS_ALEXA`);
   },
   // When user says not ready
   'AMAZON.NoIntent': function() {
@@ -183,7 +196,19 @@ const quizModeHandlers = Alexa.CreateStateHandler(states.QUIZMODE, {
 
   // When user answers
   'AnswerIntent': function() {
-    const answer = this.event.request.intent.slots.number.value;
+    var answer = this.event.request.intent.slots.number.value;
+    var letter = this.event.request.intent.slots.letter.value;
+
+    if (answer == undefined && letter) {
+      if (letter.includes('ay') || letter.includes('Ay'))
+        answer = 1;
+      if (letter.includes('bee') || letter.includes('Bee'))
+        answer = 2;
+      if (letter.includes('see') || letter.includes('See'))
+        answer = 3;
+      if (letter.includes('dee') || letter.includes('Dee'))
+        answer = 4;
+    }
     const answer_points = points[this.attributes['questionIndex']];
     if (answer && answer_points) {
       if (answer == 1) _applyPoints(this, answer_points.points_1);
@@ -230,7 +255,7 @@ const quizModeHandlers = Alexa.CreateStateHandler(states.QUIZMODE, {
   },
   // User wants to quit
   'AMAZON.CancelIntent': function() {
-    this.emit(':tellWithCard', r `CANCEL_MESSAGE` + r`STOP_MESSAGE_AUDIO`, r `SKILL_NAME`, r `CANCEL_MESSAGE`);
+    this.emit(':tellWithCard', r `CANCEL_MESSAGE` + r `STOP_MESSAGE_AUDIO`, r `SKILL_NAME`, r `CANCEL_MESSAGE`);
   },
   // Skill will stop
   'AMAZON.StopIntent': function() {
@@ -239,6 +264,114 @@ const quizModeHandlers = Alexa.CreateStateHandler(states.QUIZMODE, {
   // Any other scenario
   'Unhandled': function() {
     this.emit(':ask', r `MISUNDERSTOOD_INSTRUCTIONS_ANSWER`);
+  },
+  'Q_zero_zero': function() {
+    check_answer(this, 0, 0);
+  },
+  'Q_zero_one': function() {
+    check_answer(this, 0, 1);
+  },
+  'Q_zero_two': function() {
+    check_answer(this, 0, 2);
+  },
+  'Q_zero_three': function() {
+    check_answer(this, 0, 3);
+  },
+  'Q_one_zero': function() {
+    check_answer(this, 1, 0);
+  },
+  'Q_one_one': function() {
+    check_answer(this, 1, 1);
+  },
+  'Q_one_two': function() {
+    check_answer(this, 1, 2);
+  },
+  'Q_one_three': function() {
+    check_answer(this, 1, 3);
+  },
+  'Q_two_zero': function() {
+    check_answer(this, 2, 0);
+  },
+  'Q_two_one': function() {
+    check_answer(this, 2, 1);
+  },
+  'Q_two_two': function() {
+    check_answer(this, 2, 2);
+  },
+  'Q_two_three': function() {
+    check_answer(this, 2, 3);
+  },
+  'Q_three_zero': function() {
+    check_answer(this, 3, 0);
+  },
+  'Q_three_one': function() {
+    check_answer(this, 3, 1);
+  },
+  'Q_three_two': function() {
+    check_answer(this, 3, 2);
+  },
+  'Q_three_three': function() {
+    check_answer(this, 3, 3);
+  },
+  'Q_four_zero': function() {
+    check_answer(this, 4, 0);
+  },
+  'Q_four_one': function() {
+    check_answer(this, 4, 1);
+  },
+  'Q_four_two': function() {
+    check_answer(this, 4, 2);
+  },
+  'Q_four_three': function() {
+    check_answer(this, 4, 3);
+  },
+  'Q_five_zero': function() {
+    check_answer(this, 5, 0);
+  },
+  'Q_five_one': function() {
+    check_answer(this, 5, 1);
+  },
+  'Q_five_two': function() {
+    check_answer(this, 5, 2);
+  },
+  'Q_five_three': function() {
+    check_answer(this, 5, 3);
+  },
+  'Q_six_zero': function() {
+    check_answer(this, 6, 0);
+  },
+  'Q_six_one': function() {
+    check_answer(this, 6, 1);
+  },
+  'Q_six_two': function() {
+    check_answer(this, 6, 2);
+  },
+  'Q_six_three': function() {
+    check_answer(this, 6, 3);
+  },
+  'Q_seven_zero': function() {
+    check_answer(this, 7, 0);
+  },
+  'Q_seven_one': function() {
+    check_answer(this, 7, 1);
+  },
+  'Q_seven_two': function() {
+    check_answer(this, 7, 2);
+  },
+  'Q_seven_three': function() {
+    check_answer(this, 7, 3);
+  },
+  'Q_eight_zero': function() {
+    check_answer(this, 8, 0);
+  },
+  'Q_eight_one': function() {
+    check_answer(this, 8, 1);
+  },
+  'Q_eight_two': function() {
+    check_answer(this, 8, 2);
+  },
+  'Q_eight_three': function() {
+    check_answer(this, 8, 3);
   }
 });
 
@@ -257,7 +390,7 @@ const resultModeHandlers = Alexa.CreateStateHandler(states.RESULTMODE, {
     // Cannot use r shortcut for some reason 
     const audio_ = i18n.t(personalityList[result].audio_message);
     const resultMessage = `${prependMessage} ${r`RESULT_MESSAGE`} ${name_} . ${audio_} . ${r`PLAY_AGAIN_REQUEST`}`;
-    this.emit(':askWithCard', resultMessage , r`PLAY_AGAIN_REQUEST`, name_,i18n.t(personalityList[result].descriptions), personalityList[result].img);
+    this.emit(':askWithCard', resultMessage, r `PLAY_AGAIN_REQUEST`, name_, i18n.t(personalityList[result].descriptions), personalityList[result].img);
   },
   // user wants to play again
   'AMAZON.YesIntent': function() {
@@ -267,7 +400,7 @@ const resultModeHandlers = Alexa.CreateStateHandler(states.RESULTMODE, {
   },
   // user dosen't want to play again
   'AMAZON.NoIntent': function() {
-       this.emit(':tell', r `STOP_MESSAGE_AUDIO`);
+    this.emit(':tell', r `STOP_MESSAGE_AUDIO`);
   },
   // user wants help
   'AMAZON.HelpIntent': function() {

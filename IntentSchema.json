@@ -1,0 +1,370 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "westworld personality test",
+            "intents": [
+                {
+                    "name": "NextQuestionIntent",
+                    "slots": [],
+                    "samples": []
+                },
+                {
+                    "name": "UndecisiveIntent",
+                    "slots": [],
+                    "samples": [
+                        "I don't know",
+                        "No idea",
+                        "um",
+                        "well",
+                        "I'm not sure",
+                        "I have no idea",
+                        "ask me something else",
+                        "I don't want to answer",
+                        "none of your business"
+                    ]
+                },
+                {
+                    "name": "ResultIntent",
+                    "slots": [],
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.YesIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NoIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.RepeatIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AnswerIntent",
+                    "slots": [
+                        {
+                            "name": "number",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "letter",
+                            "type": "letter"
+                        }
+                    ],
+                    "samples": [
+                        "{number} is my choice",
+                        "I pick number {number}",
+                        "number {number}",
+                        "I pick {number}",
+                        "option {number}",
+                        "answer {number}",
+                        "{number}",
+                        "{letter} is my choice",
+                        "I pick number {letter}",
+                        "number {letter}",
+                        "I pick {letter}",
+                        "option {letter}",
+                        "answer {letter}",
+                        "{letter}"
+                    ]
+                },
+                {
+                    "name": "Q_zero_zero",
+                    "slots": [],
+                    "samples": [
+                        "Foot"
+                    ]
+                },
+                {
+                    "name": "Q_zero_one",
+                    "slots": [],
+                    "samples": [
+                        "Car"
+                    ]
+                },
+                {
+                    "name": "Q_zero_two",
+                    "slots": [],
+                    "samples": [
+                        "Train"
+                    ]
+                },
+                {
+                    "name": "Q_zero_three",
+                    "slots": [],
+                    "samples": [
+                        "Horse"
+                    ]
+                },
+                {
+                    "name": "Q_one_zero",
+                    "slots": [],
+                    "samples": [
+                        "Pick it up  After all  you are quite chivalrous"
+                    ]
+                },
+                {
+                    "name": "Q_one_one",
+                    "slots": [],
+                    "samples": [
+                        "Ignore her   you're not interested"
+                    ]
+                },
+                {
+                    "name": "Q_one_two",
+                    "slots": [],
+                    "samples": [
+                        "Pick it up and keep it for yourself"
+                    ]
+                },
+                {
+                    "name": "Q_one_three",
+                    "slots": [],
+                    "samples": [
+                        "Bring it to her   tell her she owes you"
+                    ]
+                },
+                {
+                    "name": "Q_two_zero",
+                    "slots": [],
+                    "samples": [
+                        "Humanity's reign is coming to an end "
+                    ]
+                },
+                {
+                    "name": "Q_two_one",
+                    "slots": [],
+                    "samples": [
+                        "Humans  at their core  are evil"
+                    ]
+                },
+                {
+                    "name": "Q_two_two",
+                    "slots": [],
+                    "samples": [
+                        "Humans  at their core  are good"
+                    ]
+                },
+                {
+                    "name": "Q_two_three",
+                    "slots": [],
+                    "samples": [
+                        "Humans are a mix of good and bad  it's our choices that make us"
+                    ]
+                },
+                {
+                    "name": "Q_three_zero",
+                    "slots": [],
+                    "samples": [
+                        "These violent delights have violent ends "
+                    ]
+                },
+                {
+                    "name": "Q_three_one",
+                    "slots": [],
+                    "samples": [
+                        "When we are born  we cry that we are come to this great stage of fools "
+                    ]
+                },
+                {
+                    "name": "Q_three_two",
+                    "slots": [],
+                    "samples": [
+                        "Hell is empty   And all the devils are here "
+                    ]
+                },
+                {
+                    "name": "Q_three_three",
+                    "slots": [],
+                    "samples": [
+                        "For in that sleep of death  what dreams may come  "
+                    ]
+                },
+                {
+                    "name": "Q_four_zero",
+                    "slots": [],
+                    "samples": [
+                        "Hanging out with your dog cause people are the worst "
+                    ]
+                },
+                {
+                    "name": "Q_four_one",
+                    "slots": [],
+                    "samples": [
+                        "Spending time with your significant other"
+                    ]
+                },
+                {
+                    "name": "Q_four_two",
+                    "slots": [],
+                    "samples": [
+                        "Curling up in bed with a good book"
+                    ]
+                },
+                {
+                    "name": "Q_four_three",
+                    "slots": [],
+                    "samples": [
+                        "Having a blast    regardless of the consequences"
+                    ]
+                },
+                {
+                    "name": "Q_five_zero",
+                    "slots": [],
+                    "samples": [
+                        "Machine learning AI "
+                    ]
+                },
+                {
+                    "name": "Q_five_one",
+                    "slots": [],
+                    "samples": [
+                        "Self driving cars"
+                    ]
+                },
+                {
+                    "name": "Q_five_two",
+                    "slots": [],
+                    "samples": [
+                        "Firearms "
+                    ]
+                },
+                {
+                    "name": "Q_five_three",
+                    "slots": [],
+                    "samples": [
+                        "Robotics"
+                    ]
+                },
+                {
+                    "name": "Q_six_zero",
+                    "slots": [],
+                    "samples": [
+                        "The indian "
+                    ]
+                },
+                {
+                    "name": "Q_six_one",
+                    "slots": [],
+                    "samples": [
+                        "The outlaw"
+                    ]
+                },
+                {
+                    "name": "Q_six_two",
+                    "slots": [],
+                    "samples": [
+                        "The cowgirl "
+                    ]
+                },
+                {
+                    "name": "Q_six_three",
+                    "slots": [],
+                    "samples": [
+                        "The sheriff "
+                    ]
+                },
+                {
+                    "name": "Q_seven_zero",
+                    "slots": [],
+                    "samples": [
+                        "Life's great meaning "
+                    ]
+                },
+                {
+                    "name": "Q_seven_one",
+                    "slots": [],
+                    "samples": [
+                        "Nothing "
+                    ]
+                },
+                {
+                    "name": "Q_seven_two",
+                    "slots": [],
+                    "samples": [
+                        "I'd never make it to the end "
+                    ]
+                },
+                {
+                    "name": "Q_seven_three",
+                    "slots": [],
+                    "samples": [
+                        "Another Maze "
+                    ]
+                },
+                {
+                    "name": "Q_eight_zero",
+                    "slots": [],
+                    "samples": [
+                        "Happiness "
+                    ]
+                },
+                {
+                    "name": "Q_eight_one",
+                    "slots": [],
+                    "samples": [
+                        "Family "
+                    ]
+                },
+                {
+                    "name": "Q_eight_two",
+                    "slots": [],
+                    "samples": [
+                        "Power"
+                    ]
+                },
+                {
+                    "name": "Q_eight_three",
+                    "slots": [],
+                    "samples": [
+                        "Career "
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "letter",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "ay."
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bee."
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "see."
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "dee."
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

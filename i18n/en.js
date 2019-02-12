@@ -46,10 +46,10 @@ module.exports = {
             "<say-as interpret-as='interjection'>Tell Me</say-as>."
         ],
         ANSWER_KEYS: [
-            "<say-as interpret-as='interjection'>1</say-as>",
-            "<say-as interpret-as='interjection'>2</say-as>",
-            "<say-as interpret-as='interjection'>3</say-as>",
-            "<say-as interpret-as='interjection'>4</say-as>"
+            "<say-as interpret-as='interjection'>A.</say-as>",
+            "<say-as interpret-as='interjection'>B.</say-as>",
+            "<say-as interpret-as='interjection'>C.</say-as>",
+            "<say-as interpret-as='interjection'>D.</say-as>"
         ],
         QUESTION_INTROS: [
             "Oh dear!. I must adjust this.",
@@ -73,82 +73,82 @@ module.exports = {
         questions: [{
                 text: "Which is your preferred method of transportation?",
                 answers: {
-                    '1': "Foot",
-                    '2': "Car",
-                    '3': "Train",
-                    '4': "Horse"
+                    'A': "Foot",
+                    'B': "Car",
+                    'C': "Train",
+                    'D': "Horse"
                 }
             },
             {
                 text: "You notice a pretty woman drop her bag. What do you do?",
                 answers: {
-                    '1': "Pick it up. After all, you are quite chivalrous",
-                    '2': "Ignore her - you're not interested",
-                    '3': "Pick it up and keep it for yourself",
-                    '4': "Bring it to her - tell her she owes you"
+                    'A': "Pick it up. After all, you are quite chivalrous.",
+                    'B': "Ignore her - you're not interested",
+                    'C': "Pick it up and keep it for yourself.",
+                    'D': "Bring it to her - tell her she owes you"
                 }
             },
             {
                 text: "What is your view on humanity?",
                 answers: {
-                    '1': "Humanity's reign is coming to an end.",
-                    '2': "Humans, at their core, are evil",
-                    '3': "Humans, at their core, are good",
-                    '4': "Humans are a mix of good and bad, it's our choices that make us"
+                    'A': "Humanity's reign is coming to an end.",
+                    'B': "Humans, at their core, are evil.",
+                    'C': "Humans, at their core, are good.",
+                    'D': "Humans are a mix of good and bad, it's our choices that make us"
                 }
             },
             {
                 text: "Which is your favorite Shakespeare quote?.",
                 answers: {
-                    '1': "These violent delights have violent ends.",
-                    '2': "When we are born, we cry that we are come to this great stage of fools.",
-                    '3': "Hell is empty...And all the devils are here.",
-                    '4': "For in that sleep of death, what dreams may come?."
+                    'A': "These violent delights have violent ends.",
+                    'B': "When we are born, we cry that we are come to this great stage of fools.",
+                    'C': "Hell is empty...And all the devils are here.",
+                    'D': "For in that sleep of death, what dreams may come?."
                 }
             },
             {
                 text: "Your ideal Friday night is:",
                 answers: {
-                    '1': "Hanging out with your dog cause people are the worst.",
-                    '2': "Spending time with your significant other",
-                    '3': "Curling up in bed with a good book",
-                    '4': "Having a blast ...regardless of the consequences"
+                    'A': "Hanging out with your dog cause people are the worst.",
+                    'B': "Spending time with your significant other",
+                    'C': "Curling up in bed with a good book.",
+                    'D': "Having a blast ...regardless of the consequences"
                 }
             },
             {
                 text: "Which technology do you find most intriguing?",
                 answers: {
-                    '1': "Machine learning/AI.",
-                    '2': "Self-driving cars",
-                    '3': "Firearms.",
-                    '4': "Robotics"
+                    'A': "Machine learning/AI.",
+                    'B': "Self-driving cars",
+                    'C': "Firearms.",
+                    'D': "Robotics"
                 }
             },
             {
                 text: "If you were assigned to the Old West, you would be:",
                 answers: {
-                    '1': "The indian.",
-                    '2': "The outlaw",
-                    '3': "The cowgirl.",
-                    '4': "The sheriff."
+                    'A': "The indian.",
+                    'B': "The outlaw",
+                    'C': "The cowgirl.",
+                    'D': "The sheriff."
                 }
             },
             {
                 text: "In the maze. What's at the end?",
                 answers: {
-                    '1': "Life's great meaning.",
-                    '2': "Nothing.",
-                    '3': "I'd never make it to the end.",
-                    '4': "Another Maze."
+                    'A': "Life's great meaning.",
+                    'B': "Nothing",
+                    'C': "I'd never make it to the end.",
+                    'D': "Another Maze."
                 }
             },
             {
                 text: "What is your number one priority?",
                 answers: {
-                    '1': "Happiness.",
-                    '2': "Family.",
-                    '3': "Power",
-                    '4': "Career."
+                    'A': "Happiness.",
+                    'B': "Family.",
+                    'C': "Power",
+                    'D': "Career."
                 }
             }
         ]
